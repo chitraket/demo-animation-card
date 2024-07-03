@@ -5,6 +5,7 @@ const colors = {
   grey400: '#828282',
   white: '#FFFFFF',
   black: '#000000',
+  black005:"rgba(0,0,0,0.4)",
   transparent: 'transparent',
 };
 

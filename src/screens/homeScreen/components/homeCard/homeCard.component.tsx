@@ -19,7 +19,7 @@ import {Gesture, GestureDetector} from 'react-native-gesture-handler';
 import {BlurView} from '@react-native-community/blur';
 import {DataType} from '../../data';
 import {colors, fonts, metrics} from '../../../../theme';
-import {hp, moderateScale, verticalScale} from '../../../../utils';
+import {hp, isIOS, moderateScale, verticalScale} from '../../../../utils';
 import {CTIconImageText} from '../../../../components/common';
 import images from '../../assets';
 
@@ -130,7 +130,9 @@ const HomeCard = ({
           <View style={styles.cardBottomView}>
             <BlurView
               blurType="dark"
-              blurAmount={6}
+              blurAmount={100}
+              blurRadius={10}
+              overlayColor={isIOS ? undefined : 'transparent'}
               reducedTransparencyFallbackColor={colors.white}
               style={styles.cardBottomBlurView}
             />
@@ -202,6 +204,7 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     height: verticalScale(80),
+    backgroundColor: colors.black005,
   },
   cardBottomImage: {
     height: verticalScale(54),
